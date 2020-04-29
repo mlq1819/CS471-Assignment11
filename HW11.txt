@@ -20,4 +20,8 @@ Michael Quinn
 5. More experiments: factorial (-2) and factorial -2
 The first one causes a stack overflow from recursive function calls. The second causes a syntax error, as "-2" is technically of a different type than (-2), since it inspects the "-" separately in that context from the "2".
 
-6. More edits
+6. More edits, write a thing and test it
+	K, wrote it and tested it
+
+7. More edits, use guards; how many basic types can factG accept? What happens on factG (-2)?
+	

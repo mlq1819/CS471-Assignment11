@@ -1,5 +1,5 @@
 > module Hw11
->  where
+>    where
 
 Define factorial. Let Haskell infer the type of factorial.
 
@@ -11,3 +11,7 @@ Define factorial. Let Haskell infer the type of factorial.
 > factP :: Integer -> Integer
 > factP 0 = 1
 > factP n = n * factP(n -1)
+> factG x
+>    | x < 0     = error "neg x"
+>    | x == 0    = 1
+>    | otherwise = x * factG(x-1)
