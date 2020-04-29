@@ -9,3 +9,6 @@ Michael Quinn
 1c. There's a book
 	nice
 
+2f)
+	factorial 5 returns 120, which is indeed the factorial of 5. The inferred type of "factorial" is "(Eq p, Num p) => p -> p", which seems to mean it takes an object p which is both a Num and of class "Eq", and returns another object p which is of the same classes.
+	
