@@ -8,3 +8,6 @@ Define factorial. Let Haskell infer the type of factorial.
 > fact1 n = if n == 0 then 1 else n * fact1 (n - 1)
 > fact2 :: Integer -> Integer
 > fact2 n = if n == 0 then 1 else n * fact2 (n - 1)
+> factP :: Integer -> Integer
+> factP 0 = 1
+> factP n = n * factP(n -1)

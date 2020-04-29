@@ -12,3 +12,12 @@ Michael Quinn
 2f)
 	factorial 5 returns 120, which is indeed the factorial of 5. The inferred type of "factorial" is "(Eq p, Num p) => p -> p", which seems to mean it takes an object p which is both a Num and of class "Eq", and returns another object p which is of the same classes.
 	
+3) write some code; I wrote some code
+
+4) Run experiments; what happens and why?
+	All three return the same values for inputs of 12 and 13, but fact1 returns 0 instead of what is presumably the correct answer (which factorial and fact2 both return). I believe that factorial and fact2 both end up using a larger type than fact1, which uses Int, and due to the differences between these two, Integer ends up used by factorial and fact2. If this is the case, Integer is a more stable/better version of Int. If it is similar to the language Idris that I worked on for a presentation, it is then because Integer can theoretically hold a value of any size, while Int is limited to a maximum value, which could easily be reached through this means.
+
+5. More experiments: factorial (-2) and factorial -2
+The first one causes a stack overflow from recursive function calls. The second causes a syntax error, as "-2" is technically of a different type than (-2), since it inspects the "-" separately in that context from the "2".
+
+6. More edits
