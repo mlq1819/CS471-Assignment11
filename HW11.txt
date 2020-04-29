@@ -1,3 +1,11 @@
 Michael Quinn
 
 1a. Use interactive Haskell
+	Got it?
+
+1b. Commands
+	Yup
+	
+1c. There's a book
+	nice
+
