@@ -1,0 +1,3 @@
+Michael Quinn
+
+1a. Use interactive Haskell
