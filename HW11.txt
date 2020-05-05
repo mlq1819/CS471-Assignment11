@@ -24,8 +24,10 @@ The first one causes a stack overflow from recursive function calls. The second 
 	K, wrote it and tested it
 
 7. More edits, use guards; how many basic types can factG accept? What happens on factG (-2)?
-	Assuming "accept" means that it can run using a value of that data type without producing an error, factG can accept two basic types: namely, Int and Integer. This is because it only allows values that can be compared, and it seems to treat Floats as negative values.
+	Assuming "accept" means that it can run using a value of that data type without producing an error, factG can accept two basic types: namely, Int and Integer. This is because it only allows values that can be compared, which Float should be part of, but by the definition of the function and through recursion, it will always eventually recurse using a negative number if provided a float.
 	Speaking of which, running factG on (-2) produces the user-defined error of "Exception: neg x".
 	
 8. More edits, add factI and factE. Type some expressions; what happens and why? Type some more; what happens, and guess why it does?
+	For the first set of prompts, all three prompts produce errors. Calling factorial on a Float causes a stack overflow, as its definition technically uses no functions or operators that don't work on Floats, and doesn't exclude them, though the function definition itself will only ever end when the provided value is decremented to 0 through units of 1, which can never happen when the provided value is a float. The second prompt causes a user-provided exception for neg x, for the same reason as both the previous question and previous prompt: it recurses into a negative value, which isn't accepted by the function definition. The third error is the first error that happens before the function is called; it instead only accepts Integers, and passing it a Float causes a "No instance" error for fractional integers.
+	The second 
 	
