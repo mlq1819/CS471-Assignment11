@@ -38,6 +38,8 @@ Part 2 - Curried functions
 	Actual: It is Num a => (a, a, a) -> a
 
 2. Edit it again, add a comment and a definition. evaluate an expression. What is the inferred type of prodC?
-	
+	Assumption: realistically, it should follow the same format as the previous one, Num a => (a, a, a) -> a. That said, I don't expect this question would be here if they were the same, and knowing how Haskell likes to be weird about subsequent parameters, I'll go with Num a a a => (a, a, a) -> a
+	Actual: Oddly, it is Num a => a -> a -> a -> a. I'm guessing the first three a's after the => are referencing "a b c", and the reason it's like that is because it goes to evaluate using only the first, then checks for the second, then checks for the third. The fourth a is the output.
 
-3. 
+3. Edit it again, and add a definition. Run "prodCx 2 3 4" and give the value. Run ":t prodCx" and show the type. How does its type compare to prodC?
+	

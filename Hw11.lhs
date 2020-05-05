@@ -33,4 +33,5 @@ Tuple Data Type
 Curried Functions
 
 > prodC a b c = a * b * c
-
+> prodCx :: Num a => a -> (a -> (a->a))
+> prodCx a b c = a * b * c
