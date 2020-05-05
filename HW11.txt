@@ -24,4 +24,8 @@ The first one causes a stack overflow from recursive function calls. The second 
 	K, wrote it and tested it
 
 7. More edits, use guards; how many basic types can factG accept? What happens on factG (-2)?
+	Assuming "accept" means that it can run using a value of that data type without producing an error, factG can accept two basic types: namely, Int and Integer. This is because it only allows values that can be compared, and it seems to treat Floats as negative values.
+	Speaking of which, running factG on (-2) produces the user-defined error of "Exception: neg x".
+	
+8. More edits, add factI and factE. Type some expressions; what happens and why? Type some more; what happens, and guess why it does?
 	

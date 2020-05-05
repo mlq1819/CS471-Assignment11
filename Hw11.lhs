@@ -15,3 +15,13 @@ Define factorial. Let Haskell infer the type of factorial.
 >    | x < 0     = error "neg x"
 >    | x == 0    = 1
 >    | otherwise = x * factG(x-1)
+> factI :: Integer -> Integer
+> factI n
+>    | n < 0     = error "neg x"
+>    | n == 0    = 1
+>    | otherwise = n * (factI n - 1)
+> factE :: Integer -> Integer
+> factI n
+>    | n < 0     = error "neg x"
+>    | n == 0    = 1
+>    | otherwise = n * factE n - 1
