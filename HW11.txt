@@ -50,4 +50,22 @@ Part 2 - Curried functions
 4. Edit it again, and add a definition. They don't have arguments, is this legal? If it is legal, predict each type.
 	Assumption: Firstly, each references either prodC, either directly or indirectly through each other, so clarifying prodC's typing is useful. prodC is of type Num a => a -> a -> a -> a, so most others might follow from that.
 	I think that most of these definitions are probably legal, except for prodC2 and prod3. All of them will be some start leading into prodC's type, since they all reference it eventually. Starting with prodC1, I believe its type will be Eq => a -> a -> a -> a -> a. I feel that prodC12 will be similar, but as Eq => a -> a -> a -> a -> a -> a instead.
-	Actual
+	Actual: Oh okay I see now. So all of them are legal definitions, and expect the user to input more stuff to make up for missing parameters I think. prodC1 is of type Integer -> Integer -> Integer, prodC2 is of type Integer -> Integer, and prodC3 is of type Integer, the final Integer in each one is the return type, and each one chains a specific Integer onto the next. prodC12 is of type Integer -> Integer, functioning similar to calling prodC2. I expect that, upon calling each, it will function as follows: I will be expected to provide 2 parameters for prodC1, 1 for prodC2 and prodC12, and none for prodC3. If I provide a and b as parameters, then prodC1 a b will return a*b; prodC2 and prodC12 will return 2*a; and prodC3 will return 6. After running each one, these hypothesis have been verified to be true: running prodC1 5 7 returns 35, running prodC2 5 or prodC12 5 both return 10, and running prodC3 returns 6.
+
+5. Evaluate the following expressions:
+prodC 1 2 3
+prodC1 2 3
+prodC2 3
+prodC3
+	Okay whoops just did that, all will evaluate to 6. Just checked and yes, they all evaluate to 6.
+prodC1, prodC2, prodC3, and prodC12 all use partially evaluated functions in their definitions. Can you write similar definitions using prodT. 
+	I don't think so; prodT only accepts a single parameter consisting of 3 components, but because they're packaged together, functions can only either use empty definitions or filled definitions for it.
+For example, are any of the following definitions legal?
+prodT1 = prodT 1
+prodT2 = prodT(1)
+prodT4 = prodT(1,2)
+prodT3 = prodT(1,x,y)
+	No, they shouldn't be legal. I can see why Haskell doesn't just use parentheses for passing parameters as a default, such as many other languages like the C family and Java.
+
+6. Which parenthesize expression is the definition of F G H? Is it F G H = F (G H) or (F G) H?
+	It is (F G) H; it evaluates left-to-right, and is left associative
