@@ -29,3 +29,8 @@ Define factorial. Let Haskell infer the type of factorial.
 Tuple Data Type
 
 > prodT (a,b,c) = a * b * c
+
+Curried Functions
+
+> prodC a b c = a * b * c
+

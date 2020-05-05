@@ -34,5 +34,10 @@ The first one causes a stack overflow from recursive function calls. The second 
 	
 Part 2 - Curried functions
 1. Edit it again, and add a comment and a definition. Evaluate a number of expressions. What is the inferred type of prodT?
+	Assumption: I would assume it is p, p, p -> p, or maybe Eq, Eq, Eq -> Eq
+	Actual: It is Num a => (a, a, a) -> a
+
+2. Edit it again, add a comment and a definition. evaluate an expression. What is the inferred type of prodC?
 	
 
+3. 
