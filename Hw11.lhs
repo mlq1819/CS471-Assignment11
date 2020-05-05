@@ -21,7 +21,7 @@ Define factorial. Let Haskell infer the type of factorial.
 >    | n == 0    = 1
 >    | otherwise = n * (factI n - 1)
 > factE :: Integer -> Integer
-> factI n
+> factE n
 >    | n < 0     = error "neg x"
 >    | n == 0    = 1
 >    | otherwise = n * factE n - 1
