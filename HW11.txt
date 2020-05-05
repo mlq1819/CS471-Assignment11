@@ -42,4 +42,12 @@ Part 2 - Curried functions
 	Actual: Oddly, it is Num a => a -> a -> a -> a. I'm guessing the first three a's after the => are referencing "a b c", and the reason it's like that is because it goes to evaluate using only the first, then checks for the second, then checks for the third. The fourth a is the output.
 
 3. Edit it again, and add a definition. Run "prodCx 2 3 4" and give the value. Run ":t prodCx" and show the type. How does its type compare to prodC?
-	
+	The first prompt returns the correct value of 24.
+	The second prompt returns Num a => a -> a -> a -> a
+	I was sort of expecting this, but the typing of prodCx is the same as of prodC. The parentheses in the definition must then just be an explicit redefinition of how it would type the function by default without the parentheses, sort of like saying y = ((mx)+b): it follows the default ordering of the terms.
+	Following that, then my reasoning from 2.2 might be correct, in that it evaluates each part of it separately from the rest, rather than together as a cohesive unit of variables.
+
+4. Edit it again, and add a definition. They don't have arguments, is this legal? If it is legal, predict each type.
+	Assumption: Firstly, each references either prodC, either directly or indirectly through each other, so clarifying prodC's typing is useful. prodC is of type Num a => a -> a -> a -> a, so most others might follow from that.
+	I think that most of these definitions are probably legal, except for prodC2 and prod3. All of them will be some start leading into prodC's type, since they all reference it eventually. Starting with prodC1, I believe its type will be Eq => a -> a -> a -> a -> a. I feel that prodC12 will be similar, but as Eq => a -> a -> a -> a -> a -> a instead.
+	Actual

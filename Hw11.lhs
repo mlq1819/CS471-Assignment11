@@ -35,3 +35,7 @@ Curried Functions
 > prodC a b c = a * b * c
 > prodCx :: Num a => a -> (a -> (a->a))
 > prodCx a b c = a * b * c
+> prodC1 = prodC 1
+> prodC2 = prodC1 2
+> prodC3 = prodC2 3
+> prodC12 = prodC 1 2
