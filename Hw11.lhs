@@ -25,3 +25,7 @@ Define factorial. Let Haskell infer the type of factorial.
 >    | n < 0     = error "neg x"
 >    | n == 0    = 1
 >    | otherwise = n * factE n - 1
+
+Tuple Data Type
+
+> prodT (a,b,c) = a * b * c

@@ -29,5 +29,10 @@ The first one causes a stack overflow from recursive function calls. The second 
 	
 8. More edits, add factI and factE. Type some expressions; what happens and why? Type some more; what happens, and guess why it does?
 	For the first set of prompts, all three prompts produce errors. Calling factorial on a Float causes a stack overflow, as its definition technically uses no functions or operators that don't work on Floats, and doesn't exclude them, though the function definition itself will only ever end when the provided value is decremented to 0 through units of 1, which can never happen when the provided value is a float. The second prompt causes a user-provided exception for neg x, for the same reason as both the previous question and previous prompt: it recurses into a negative value, which isn't accepted by the function definition. The third error is the first error that happens before the function is called; it instead only accepts Integers, and passing it a Float causes a "No instance" error for fractional integers.
-	The second 
+	For the second set of prompts, the first prompt to factI returns the correct value, while the second prompt to factE causes a stack overflow error. The only difference between the two functions occurs within their recursive case, so we know the error to be there. That difference is the presence of parentheses surrounding the parameter expression for the recursive call in the first prompt, and its absence in the second prompt. These parentheses allow the first prompt to correctly evaluate the expression, then pass that onto the recursive call, while in the second prompt, the parameter expression is instead treated as a section of a larger return expression, and only the "n" in the parameter expression is actually passed as a parameter to the recursive call, meaning that every recursive call will pass the same parameter as it was originally given without modification. This causes an infinite recursive loop, which overflows the function call stack.
 	
+	
+Part 2 - Curried functions
+1. Edit it again, and add a comment and a definition. Evaluate a number of expressions. What is the inferred type of prodT?
+	
+
